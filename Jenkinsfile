@@ -11,10 +11,11 @@ pipeline {
     }
 
     stages {
-    stage('test') {
-        bat(returnStdout: true, script: "echo \"Buils starting...\"").trim()
-    }
-
+        stage('test') {
+            steps {
+                bat(returnStdout: true, script: "echo \"Buils starting...\"").trim()
+            }
+        }
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
