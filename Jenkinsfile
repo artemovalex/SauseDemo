@@ -20,7 +20,7 @@ pipeline {
                 // sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
-                bat "mvn clean test -DsuiteXmlFile=src/main/resources/smoke.xml"
+                bat "mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml"
             }
         }
         stage('Allure') {
