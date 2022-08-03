@@ -12,12 +12,7 @@ pipeline {
 
     stages {
     stage('test') {
-          cmd_exec('echo "Buils starting..."')
-          cmd_exec('echo "dir /a /b"')
-    }
-
-    def cmd_exec(command) {
-        return bat(returnStdout: true, script: "${command}").trim()
+        bat(returnStdout: true, script: "echo \"Buils starting...\"").trim()
     }
 
         stage('Build') {
