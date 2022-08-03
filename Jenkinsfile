@@ -31,18 +31,18 @@ pipeline {
                 bat (script: "chcp 65001\n mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml",  returnStatus: true)
             }
         }
-  //  stage('Allure') {
-  //      steps {
-  //          script {
-  //              allure([
-  //                  includeProperties: false,
-  //                  jdk: '',
-  //                  properties: [],
-  //                  reportBuildPolicy: 'ALWAYS',
-  //                  results: [[path: 'target/allure-results']]
-  //              ])
-  //          }
-  //      }
-  //  }
+         stage('Allure') {
+             steps {
+                 script {
+                     allure([
+                         includeProperties: false,
+                         jdk: '',
+                         properties: [],
+                         reportBuildPolicy: 'ALWAYS',
+                         results: [[path: 'target/allure-results']]
+                     ])
+                 }
+             }
+         }
     }
 }
