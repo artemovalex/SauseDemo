@@ -27,7 +27,8 @@ pipeline {
                 // To run Maven on a Windows agent, use
             //    bat "ls"
               //  bat "mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml"
-                bat "chcp 65001\n mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml"
+              //  bat "chcp 65001\n mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml"
+                bat (script: "chcp 65001\n mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml",  returnStatus: true)
             }
         }
   //  stage('Allure') {
