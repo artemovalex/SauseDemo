@@ -11,6 +11,15 @@ pipeline {
     }
 
     stages {
+    stage('test') {
+          cmd_exec('echo "Buils starting..."')
+          cmd_exec('echo "dir /a /b"')
+    }
+
+    def cmd_exec(command) {
+        return bat(returnStdout: true, script: "${command}").trim()
+    }
+
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
