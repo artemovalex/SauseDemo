@@ -11,11 +11,11 @@ pipeline {
     }
 
     stages {
-        stage('test') {
-            steps {
-                bat(returnStdout: true, script: "echo \"Buils starting...\"").trim()
-            }
-        }
+   //     stage('test') {
+   //         steps {
+   //             bat(returnStdout: true, script: "echo \"Buils starting...\"").trim()
+   //         }
+   //     }
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
@@ -25,9 +25,9 @@ pipeline {
                 // sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
-                bat "ls"
-                bat "mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml"
-
+            //    bat "ls"
+              //  bat "mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml"
+                bat "chcp 65001\n mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml"
             }
         }
   //  stage('Allure') {
