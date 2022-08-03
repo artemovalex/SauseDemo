@@ -1,9 +1,4 @@
 pipeline {
-environment {
-
-    PATH = "C:\\WINDOWS\\SYSTEM32"
-
-}
     agent any
 
     tools {
@@ -28,7 +23,6 @@ environment {
                 bat "mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml"
             //    bat (script: "mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml",  returnStatus: true)
             }
-            //chcp 65001\n
         }
          stage('Allure') {
              steps {
