@@ -28,8 +28,9 @@ pipeline {
             //    bat "ls"
               //  bat "mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml"
               //  bat "chcp 65001\n mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml"
-                bat (script: "chcp 65001\n mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml",  returnStatus: true)
+                bat (script: "mvn clean test -DsuiteXmlFile=src/main/resources/regression.xml",  returnStatus: true)
             }
+            //chcp 65001\n
         }
          stage('Allure') {
              steps {
